@@ -23,6 +23,7 @@ const fieldMap = {
   subject: "%s",
   body: "%b",
   rawBody: "%B",
+  tags: "%D",
 } as const;
 export type CommitField = keyof typeof fieldMap;
 
@@ -193,7 +194,22 @@ const parseCommits = <T extends string>(
 
     commit.forEach((commitField, index) => {
       if (fields[index]) {
-        parsed[fields[index]] = commitField;
+        if (fields[index] === "tags") {
+          const tags: Array<String> = [];
+          const start = commitField.indexOf("tag: ");
+          if (start >= 0) {
+            commitField
+              .substr(start + 5)
+              .trim()
+              .split(",")
+              .forEach(function (tag) {
+                tags.push(tag.trim());
+              });
+          }
+          parsed[fields[index]] = tags;
+        } else {
+          parsed[fields[index]] = commitField;
+        }
       } else if (nameStatus) {
         const pos = (index - fields.length) % notOptFields.length;
 
