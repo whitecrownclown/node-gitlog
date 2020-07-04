@@ -11,6 +11,12 @@ Git log parser for Node.JS
 npm install gitlog --save
 ```
 
+## Credits
+
+This is a fork of https://github.com/domharrington/node-gitlog
+
+The changes here basically allow you to extend the `fieldMap` directly
+
 ## Usage
 
 ```js

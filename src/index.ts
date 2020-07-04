@@ -5,7 +5,7 @@ import createDebugger from "debug";
 const debug = createDebugger("gitlog");
 
 const delimiter = "\t";
-const fieldMap = {
+export const fieldMap = {
   hash: "%H",
   abbrevHash: "%h",
   treeHash: "%T",

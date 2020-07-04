@@ -1,5 +1,5 @@
 {
-  "name": "gitlog",
+  "name": "gitlog2",
   "version": "4.0.0",
   "description": "Git log parser for Node.JS",
   "module": "dist/gitlog.esm.js",
@@ -16,7 +16,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/domharrington/node-gitlog.git"
+    "url": "git://github.com/whitecrownclown/node-gitlog.git"
   },
   "keywords": [
     "git",
